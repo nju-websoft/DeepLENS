@@ -1,0 +1,5 @@
+<http://dbpedia.org/resource/2008_Copa_América_–_FIFA_Futsal> <http://dbpedia.org/ontology/time> "17:00" .
+<http://dbpedia.org/resource/2008_Copa_América_–_FIFA_Futsal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/SoccerTournament> .
+<http://dbpedia.org/resource/2008_Copa_América_–_FIFA_Futsal> <http://www.w3.org/2000/01/rdf-schema#label> "2008 Copa América – FIFA Futsal"@en .
+<http://dbpedia.org/resource/2008_Copa_América_–_FIFA_Futsal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Tournament> .
+<http://dbpedia.org/resource/2008_Copa_América_–_FIFA_Futsal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.wikidata.org/entity/Q500834> .

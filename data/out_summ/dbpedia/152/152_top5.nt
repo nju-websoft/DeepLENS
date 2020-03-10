@@ -1,0 +1,5 @@
+<http://dbpedia.org/resource/Fleckistock> <http://www.georss.org/georss/point> "46.70736111111111 8.497666666666667" .
+<http://dbpedia.org/resource/Salbitschijen> <http://dbpedia.org/ontology/parentMountainPeak> <http://dbpedia.org/resource/Fleckistock> .
+<http://dbpedia.org/resource/Fleckistock> <http://www.w3.org/2000/01/rdf-schema#label> "Fleckistock"@en .
+<http://dbpedia.org/resource/Stucklistock> <http://dbpedia.org/ontology/parentMountainPeak> <http://dbpedia.org/resource/Fleckistock> .
+<http://dbpedia.org/resource/Fleckistock> <http://xmlns.com/foaf/0.1/name> "Fleckistock"@en .

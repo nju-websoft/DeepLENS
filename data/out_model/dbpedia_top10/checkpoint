@@ -1,0 +1,2 @@
+model_checkpoint_path: "D:\\work\\runspace\\DeepLENS_forWS\\DeepLENS\\data\\out_model\\dbpedia_top10\\DeepLENS_dbpedia_top10_r0_f4_e49"
+all_model_checkpoint_paths: "D:\\work\\runspace\\DeepLENS_forWS\\DeepLENS\\data\\out_model\\dbpedia_top10\\DeepLENS_dbpedia_top10_r0_f4_e49"

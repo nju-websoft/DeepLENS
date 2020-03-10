@@ -1,0 +1,5 @@
+<http://dbpedia.org/resource/392_(album)> <http://dbpedia.org/ontology/releaseDate> "2011-09-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://dbpedia.org/resource/392_(album)> <http://dbpedia.org/ontology/genre> <http://dbpedia.org/resource/Rock_music> .
+<http://dbpedia.org/resource/392_(album)> <http://dbpedia.org/ontology/artist> <http://dbpedia.org/resource/CNBLUE> .
+<http://dbpedia.org/resource/392_(album)> <http://dbpedia.org/ontology/recordLabel> <http://dbpedia.org/resource/AI_Entertainment> .
+<http://dbpedia.org/resource/392_(album)> <http://www.w3.org/2000/01/rdf-schema#label> "392 (album)"@en .

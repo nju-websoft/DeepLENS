@@ -1,0 +1,5 @@
+<http://dbpedia.org/resource/Balanites> <http://dbpedia.org/ontology/division> <http://dbpedia.org/resource/Flowering_plant> .
+<http://dbpedia.org/resource/Balanites> <http://dbpedia.org/ontology/family> <http://dbpedia.org/resource/Zygophyllaceae> .
+<http://dbpedia.org/resource/Balanites_roxburghii> <http://dbpedia.org/ontology/genus> <http://dbpedia.org/resource/Balanites> .
+<http://dbpedia.org/resource/Balanites_maughamii> <http://dbpedia.org/ontology/genus> <http://dbpedia.org/resource/Balanites> .
+<http://dbpedia.org/resource/Balanites> <http://dbpedia.org/ontology/family> <http://dbpedia.org/resource/Tribuloideae> .

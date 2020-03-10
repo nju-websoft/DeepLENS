@@ -1,0 +1,5 @@
+<http://dbpedia.org/resource/Bryotropha_plantariella> <http://dbpedia.org/ontology/family> <http://dbpedia.org/resource/Gelechiidae> .
+<http://dbpedia.org/resource/Bryotropha_plantariella> <http://dbpedia.org/ontology/class> <http://dbpedia.org/resource/Insect> .
+<http://dbpedia.org/resource/Bryotropha_plantariella> <http://dbpedia.org/ontology/genus> <http://dbpedia.org/resource/Bryotropha> .
+<http://dbpedia.org/resource/Bryotropha_plantariella> <http://dbpedia.org/ontology/order> <http://dbpedia.org/resource/Lepidoptera> .
+<http://dbpedia.org/resource/Bryotropha_plantariella> <http://www.w3.org/2000/01/rdf-schema#label> "Bryotropha plantariella"@en .

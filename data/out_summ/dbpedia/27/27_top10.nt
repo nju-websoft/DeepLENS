@@ -1,0 +1,10 @@
+<http://dbpedia.org/resource/Uelsby> <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Germany> .
+<http://dbpedia.org/resource/Uelsby> <http://dbpedia.org/ontology/federalState> <http://dbpedia.org/resource/Schleswig-Holstein> .
+<http://dbpedia.org/resource/Uelsby> <http://xmlns.com/foaf/0.1/homepage> <http://www.amt-suedangeln.de/> .
+<http://dbpedia.org/resource/Uelsby> <http://dbpedia.org/ontology/populationTotal> "461"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://dbpedia.org/resource/Uelsby> <http://dbpedia.org/ontology/district> <http://dbpedia.org/resource/Schleswig-Flensburg> .
+<http://dbpedia.org/resource/Uelsby> <http://www.georss.org/georss/point> "54.6 9.566666666666666" .
+<http://dbpedia.org/resource/Uelsby> <http://dbpedia.org/ontology/postalCode> "24860" .
+<http://dbpedia.org/resource/Uelsby> <http://dbpedia.org/ontology/elevation> "34.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://dbpedia.org/resource/Uelsby> <http://dbpedia.org/ontology/populationAsOf> "2006-12-31"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://dbpedia.org/resource/Uelsby> <http://dbpedia.org/ontology/areaCode> "04623" .

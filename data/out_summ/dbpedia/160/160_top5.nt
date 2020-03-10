@@ -1,0 +1,5 @@
+<http://dbpedia.org/resource/Schistura_jarutanini> <http://dbpedia.org/ontology/family> <http://dbpedia.org/resource/Nemacheilidae> .
+<http://dbpedia.org/resource/Schistura_jarutanini> <http://dbpedia.org/ontology/genus> <http://dbpedia.org/resource/Schistura> .
+<http://dbpedia.org/resource/Schistura_jarutanini> <http://dbpedia.org/ontology/conservationStatus> "VU" .
+<http://dbpedia.org/resource/Schistura_jarutanini> <http://www.w3.org/2000/01/rdf-schema#label> "Schistura jarutanini"@en .
+<http://dbpedia.org/resource/Schistura_jarutanini> <http://xmlns.com/foaf/0.1/name> "Schistura jarutanini"@en .

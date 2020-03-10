@@ -1,0 +1,5 @@
+<http://dbpedia.org/resource/Stemonoporus_laevifolius> <http://dbpedia.org/ontology/division> <http://dbpedia.org/resource/Flowering_plant> .
+<http://dbpedia.org/resource/Stemonoporus_laevifolius> <http://dbpedia.org/ontology/conservationStatus> "EN" .
+<http://dbpedia.org/resource/Stemonoporus_laevifolius> <http://dbpedia.org/ontology/family> <http://dbpedia.org/resource/Dipterocarpaceae> .
+<http://dbpedia.org/resource/Stemonoporus_laevifolius> <http://dbpedia.org/ontology/genus> <http://dbpedia.org/resource/Stemonoporus> .
+<http://dbpedia.org/resource/Stemonoporus_laevifolius> <http://www.w3.org/2000/01/rdf-schema#label> "Stemonoporus laevifolius"@en .

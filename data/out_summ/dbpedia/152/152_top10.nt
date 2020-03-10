@@ -1,0 +1,10 @@
+<http://dbpedia.org/resource/Salbitschijen> <http://dbpedia.org/ontology/parentMountainPeak> <http://dbpedia.org/resource/Fleckistock> .
+<http://dbpedia.org/resource/Fleckistock> <http://dbpedia.org/ontology/mountainRange> <http://dbpedia.org/resource/Uri_Alps> .
+<http://dbpedia.org/resource/Fleckistock> <http://www.georss.org/georss/point> "46.70736111111111 8.497666666666667" .
+<http://dbpedia.org/resource/Rorspitzli> <http://dbpedia.org/ontology/parentMountainPeak> <http://dbpedia.org/resource/Fleckistock> .
+<http://dbpedia.org/resource/Stucklistock> <http://dbpedia.org/ontology/parentMountainPeak> <http://dbpedia.org/resource/Fleckistock> .
+<http://dbpedia.org/resource/Fleckistock> <http://dbpedia.org/ontology/locatedInArea> <http://dbpedia.org/resource/Switzerland> .
+<http://dbpedia.org/resource/Fleckistock> <http://dbpedia.org/ontology/elevation> "3417.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://dbpedia.org/resource/Fleckistock> <http://dbpedia.org/ontology/parentMountainPeak> <http://dbpedia.org/resource/Dammastock> .
+<http://dbpedia.org/resource/Fleckistock> <http://dbpedia.org/ontology/locatedInArea> <http://dbpedia.org/resource/Canton_of_Uri> .
+<http://dbpedia.org/resource/Fleckistock> <http://dbpedia.org/ontology/prominence> "761.0"^^<http://www.w3.org/2001/XMLSchema#double> .

@@ -1,0 +1,5 @@
+<http://dbpedia.org/resource/Roque_Ceruti> <http://dbpedia.org/ontology/birthDate> "1683"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+<http://dbpedia.org/resource/Roque_Ceruti> <http://dbpedia.org/ontology/deathDate> "1760"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+<http://dbpedia.org/resource/Roque_Ceruti> <http://dbpedia.org/ontology/birthYear> "1683"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+<http://dbpedia.org/resource/Roque_Ceruti> <http://www.w3.org/2000/01/rdf-schema#label> "Roque Ceruti"@en .
+<http://dbpedia.org/resource/Roque_Ceruti> <http://xmlns.com/foaf/0.1/name> "Roque Ceruti"@en .

@@ -1,0 +1,5 @@
+<http://dbpedia.org/resource/If_(Glasvegas_song)> <http://dbpedia.org/ontology/releaseDate> "2013-07-08"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://dbpedia.org/resource/If_(Glasvegas_song)> <http://dbpedia.org/ontology/musicalBand> <http://dbpedia.org/resource/Glasvegas> .
+<http://dbpedia.org/resource/If_(Glasvegas_song)> <http://dbpedia.org/ontology/album> <http://dbpedia.org/resource/Later...When_the_TV_Turns_to_Static> .
+<http://dbpedia.org/resource/If_(Glasvegas_song)> <http://dbpedia.org/ontology/musicalArtist> <http://dbpedia.org/resource/Glasvegas> .
+<http://dbpedia.org/resource/If_(Glasvegas_song)> <http://dbpedia.org/ontology/producer> <http://dbpedia.org/resource/James_Allan_(musician)> .
