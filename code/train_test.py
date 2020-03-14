@@ -8,9 +8,12 @@ from deeplens import *
 from dataset import *
 # seed = 7
 
-def do_run(ds_name, topk, num_epoch, valid_step, mode='test', model_save_dir=OUT_MODEL_DIR, out_summ_dir=OUT_SUMM_DIR):
+# def do_run(ds_name, topk, num_epoch, valid_step, mode='test', model_save_dir=OUT_MODEL_DIR, out_summ_dir, in_esbm_dir=None):
+def do_run(ds_name, topk, num_epoch, valid_step, mode
+		   ,in_embed_dir, in_esbm_dir
+		   , model_save_dir, out_summ_dir):
 	print('run on mode...',mode)
-	dataset = DataSet(ds_name, topk)
+	dataset = DataSet(ds_name, topk, in_embed_dir=in_embed_dir, in_esbm_dir=in_esbm_dir)
 	if os.path.isdir(model_save_dir):
 		print('model samve dir exists!', model_save_dir)
 	else:
@@ -27,7 +30,7 @@ def do_run(ds_name, topk, num_epoch, valid_step, mode='test', model_save_dir=OUT
 		if mode == 'test' or mode == 'all':
 			if mode == 'test':
 				valid_epoch = valid_epoch_list[datafold.fold_id]
-			test_favg = _do_test(datafold, model_save_dir, valid_epoch, out_summ_dir)
+			test_favg = _do_test(datafold, model_save_dir, valid_epoch, out_summ_dir, in_esbm_dir)
 			test_favg_list.append(test_favg)
 			# print('test fold %d:' % datafold.fold_id, test_favg)
 	#==== out fold
@@ -71,7 +74,7 @@ def _do_train_one_model(datafold, num_epoch, valid_step
 	print('train fold %d:' % datafold.fold_id, stop_valid_epoch, stop_train_loss, stop_valid_loss)
 	return model.name, stop_valid_epoch, stop_train_loss, stop_valid_loss
 
-def _do_test(datafold, model_save_dir, valid_epoch, out_summ_dir, out_to_files=True):
+def _do_test(datafold, model_save_dir, valid_epoch, out_summ_dir, in_esbm_dir, out_to_files=True):
 	model = DeepLENS(datafold.dim_triple, datafold.max_desc_size
 					 , fold_id=datafold.fold_id, do_build=False)
 	tf.reset_default_graph()
@@ -98,7 +101,7 @@ def _do_test(datafold, model_save_dir, valid_epoch, out_summ_dir, out_to_files=T
 			# print('summ_scored:',summ_scored)
 			summ_tids, summ_scores = zip(*summ_scored)
 			if out_to_files:
-				gen_summ_file(datafold, eid, summ_tids, out_summ_dir=out_summ_dir)
+				gen_summ_file(datafold, eid, summ_tids, out_summ_dir=out_summ_dir, esbm_dir=in_esbm_dir)
 			golds = eid_golds_dict.get(eid)
 			favg = _eval_Fmeasure(summ_tids, golds)
 			favg_list.append(favg)
@@ -111,6 +114,8 @@ def _eval_Fmeasure(summ_tids, gold_list):
 	k = len(summ_tids)
 	f_list = []
 	for gold in gold_list:
+		if len(gold) !=k:
+			print('gold-k:',len(gold), k)
 		assert len(gold)==k # for ESBM, not for dsFACES
 		corr = len([t for t in summ_tids if t in gold])
 		precision = corr/k
@@ -140,6 +145,10 @@ if __name__ == '__main__':
 	# parser.add_argument("--topk", default=TOPK.top10, type=lambda topK: TOPK[topK], help="string, 'top5' or 'top10'")
 	parser.add_argument("--num_epoch", default=50, type=int, help="train model in total n epochs")
 	parser.add_argument("--valid_step", default=1, type=int, help="num of epochs between two valid during training")
+	parser.add_argument("--in_embed_dir", default=IN_EMBED_DIR, type=str,
+						help="directory for input ids and embeddings")
+	parser.add_argument("--in_esbm_dir", default=IN_ESBM_DIR, type=str,
+						help="directory for input original data and golds")
 	parser.add_argument("--model_save_dir", default=OUT_MODEL_DIR, type=str, help="directory for saving or restoring the trained models")
 	parser.add_argument("--out_summ_dir", default=OUT_SUMM_DIR, type=str,
 						help="directory for saving the generated summaries")
@@ -149,4 +158,6 @@ if __name__ == '__main__':
 	for ds_name in ['dbpedia', 'lmdb']:
 		for topk in [TOPK.top5, TOPK.top10]:
 			do_run(ds_name, topk, args.num_epoch, args.valid_step
-				   , mode=args.mode, model_save_dir=args.model_save_dir, out_summ_dir=args.out_summ_dir)
+				   , mode=args.mode
+				   , in_embed_dir=args.in_embed_dir, in_esbm_dir=args.in_esbm_dir
+				   , model_save_dir=args.model_save_dir, out_summ_dir=args.out_summ_dir)

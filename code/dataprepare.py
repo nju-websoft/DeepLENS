@@ -18,6 +18,8 @@ def get_5fold_train_valid_test_elist(ds_name_str, esbm_dir=IN_ESBM_DIR):
 		split_path = path.join(esbm_dir, "dbpedia_split")
 	elif ds_name_str == "lmdb":
 		split_path = path.join(esbm_dir, "lmdb_split")
+	elif ds_name_str == "dsfaces":
+		split_path = path.join(esbm_dir, "dsfaces_split")
 	else:
 		raise ValueError("The database's name must be dbpedia or lmdb")
 
@@ -102,7 +104,7 @@ def load_tlabel(ds_name_str, topk_str, in_embed_dir=IN_EMBED_DIR):
 			tid = int(items[0])
 			tlabel = int(items[1])
 			tid_label_dict[tid] = tlabel
-	# # #=== check usage
+	# # # #=== check usage
 	# print(tid_label_dict.get(0)) # None
 	# for k,v in tid_label_dict.items():
 	# 	print('k:',k,type(k), 'v:',type(v),v)

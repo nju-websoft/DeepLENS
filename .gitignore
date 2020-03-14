@@ -138,3 +138,5 @@ dmypy.json
 .pyre/
 
 gen_with_db.py
+run_log.txt
+backup/

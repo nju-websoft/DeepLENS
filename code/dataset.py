@@ -14,20 +14,22 @@ class TOPK(Enum):
 	top10 = 10;
 
 class DataSet(object):
-	def __init__(self, ds_name, topk, num_folds=5):
+	def __init__(self, ds_name, topk, num_folds=5, in_embed_dir=None, in_esbm_dir=None):
 		self.ds_name = ds_name
 		self.topk = topk
 		self.num_folds = num_folds
+		self.in_embed_dir = in_embed_dir
+		self.in_esbm_dir = in_esbm_dir
 
 	def get_data_folds(self, reverse=False):
-		trainList, validList, testList = get_5fold_train_valid_test_elist(self.ds_name) # eid_list, ordered asc
+		trainList, validList, testList = get_5fold_train_valid_test_elist(self.ds_name, esbm_dir=self.in_esbm_dir) # eid_list, ordered asc
 		key_prefix = ''.join([self.ds_name,self.topk.name])
 		i_range = reversed(range(self.num_folds)) if reverse else range(self.num_folds)
 		for i in i_range:
 			key = ''.join([key_prefix, str(i)])
 			datafold = CACHE_FOLD_DICT.get(key) # get from cache
 			if datafold == None:
-				datafold = DataFold(i, self.ds_name, self.topk, trainList[i], validList[i], testList[i])
+				datafold = DataFold(i, self.ds_name, self.topk, trainList[i], validList[i], testList[i], self.in_embed_dir)
 				CACHE_FOLD_DICT[key] = datafold # cache
 			yield datafold
 
@@ -38,15 +40,15 @@ class DataSet(object):
 		return datafold
 
 class DataFold(object):
-	def __init__(self, fold_id, ds_name, topk, train_eid_list, valid_eid_list, test_eid_list):
+	def __init__(self, fold_id, ds_name, topk, train_eid_list, valid_eid_list, test_eid_list, in_embed_dir):
 		self.fold_id = fold_id
 		self.ds_name = ds_name
 		self.topk = topk
 		self.train_eid_list = train_eid_list
 		self.valid_eid_list = valid_eid_list
 		self.test_eid_list = test_eid_list
-		# for mmr
-		self.tid_tembed_dict = dict()
+
+		self.in_embed_dir = in_embed_dir
 
 		# loda data
 		time_start = time.time()
@@ -59,9 +61,9 @@ class DataFold(object):
 
 	def _load_data_from_files(self):
 		print('loading DataFold {}...'.format(self.fold_id)) #, ', DataFold._load_data_from_files()....')
-		self.eid_tids_dict, self.max_desc_size = load_desc_tids(self.ds_name)
-		tid_label_dict = load_tlabel(self.ds_name, self.topk.name)
-		self.tembed_list, tid_idx_dict, self.dim_triple = load_embed(self.ds_name)
+		self.eid_tids_dict, self.max_desc_size = load_desc_tids(self.ds_name, embed_dir=self.in_embed_dir)
+		tid_label_dict = load_tlabel(self.ds_name, self.topk.name, in_embed_dir=self.in_embed_dir)
+		self.tembed_list, tid_idx_dict, self.dim_triple = load_embed(self.ds_name, in_embed_dir=self.in_embed_dir)
 		assert self.dim_triple>0
 		#===== for train
 		self.train_eid_list.sort()
@@ -141,7 +143,7 @@ class DataFold(object):
 		if hasattr(self,'egolds_dict') and self.egolds_dict != None:
 			return self.egolds_dict
 		# print('loading golds...')
-		self.egolds_dict = load_egolds_dict(self.ds_name, self.topk.name)
+		self.egolds_dict = load_egolds_dict(self.ds_name, self.topk.name, embed_dir=self.in_embed_dir)
 		return self.egolds_dict
 
 
