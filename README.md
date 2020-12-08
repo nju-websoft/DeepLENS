@@ -1,5 +1,5 @@
 # DeepLENS
-Source code and resources for paper "DeepLENS: Deep Learning for Entity Summarization" (Accepted by (DL4KG2020)[http://ceur-ws.org/Vol-2635/]).
+Source code and resources for paper "DeepLENS: Deep Learning for Entity Summarization" (Accepted by (DL4KG2020)[http://ceur-ws.org/Vol-2635/])).
 
 
 ## Dependencies
